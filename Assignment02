@@ -38,7 +38,7 @@ public class Assignment02 {
      * @param arr array to search
      * @return minimum elemnt from the array
      */
-    public static int findMin(int arr[]) {
+    public static int findMin(int[] arr) {
         int min = arr[0]; //determining a temporary min value from the array
 
         for(int i = 1; i < arr.length; i++) {
@@ -55,7 +55,7 @@ public class Assignment02 {
      * @param arr array to search
      * @return maximum element from the array
      */
-    public static int findMax(int arr[]) {
+    public static int findMax(int[] arr) {
         int max = arr[0]; //determining a temporary max value from the array
 
         for(int i = 1; i < arr.length; i++) {
@@ -72,7 +72,7 @@ public class Assignment02 {
      * @param arr array for calculating average
      * @return an array with differences
      */
-    public static double [] findDifference(int[]arr){
+    public static double [] findDifference(int[] arr){
         double total = 0; 
         double average = 0;
         double difference[] = new double[arr.length]; //new array which stores differences
@@ -87,6 +87,36 @@ public class Assignment02 {
         }
         return difference;
 
-    }    
+    }   
+    /**
+     * This method is used to find the total ​​of odd indexed elements in an array
+     * @param arr array to search
+     * @return sum of odd indexed elements
+     */
+    public static int sumOfOddElements(int[] arr){
+        int sumOdds = 0;
+
+        for(int i = 1; i < arr.length; i += 2){
+            sumOdds += arr[i];
+        }
+
+        return sumOdds;
+    }
+
+    /**
+     * This method is used to find the total ​​of even indexed elements in an array
+     * @param arr array to search
+     * @return sum of even indexed elements
+     */
+    public static int sumOfEvenElements(int[] arr){
+        int sumEvens = 0;
+
+        for(int i = 0; i < arr.length; i += 2){
+            sumEvens += arr[i];
+        }
+
+        return sumEvens;
+    }
+    
 }
 
