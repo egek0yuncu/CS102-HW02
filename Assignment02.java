@@ -1,18 +1,54 @@
-a. Given an array size, create an int array that contains random integers in the range [0,100]. All the remaining functionality will operate on this array.
-b. Display the menu options, get the user’s choice, and call the required methods to print out the result. Until the user chooses to exit, you should display the menu again.
-c. Find the minimum and the maximum of the array; these should be implemented as different methods.
-d. Find the average of the array. Display how each element of the array differs from the average. For example, if the array is {2, 6, 9, 3, 5}, and the average is 5, then the differences from the average would be {-3, 1, 4, -2, 0}.
-e. Find the sum of elements with odd- and even-numbered indexes. For example, if the array is {1, 5, 8, 9, 10, 2, 6}, the sum of the odd indexes is 5 + 9 + 2, and the sum of the even indexes is 1 + 8 + 10 + 6, assuming indexes start at 0.
+//a. Given an array size, create an int array that contains random integers in the range [0,100]. All the remaining functionality will operate on this array.
+//b. Display the menu options, get the user’s choice, and call the required methods to print out the result. Until the user chooses to exit, you should display the menu again.
+//c. Find the minimum and the maximum of the array; these should be implemented as different methods.
+//d. Find the average of the array. Display how each element of the array differs from the average. For example, if the array is {2, 6, 9, 3, 5}, and the average is 5, then the differences from the average would be {-3, 1, 4, -2, 0}.
+//e. Find the sum of elements with odd- and even-numbered indexes. For example, if the array is {1, 5, 8, 9, 10, 2, 6}, the sum of the odd indexes is 5 + 9 + 2, and the sum of the even indexes is 1 + 8 + 10 + 6, assuming indexes start at 0.
 
 
+import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Assignment02 {
     
     public static void main(String[] args) {
-
-        
-
+        Scanner scan = new Scanner(System.in);
+        int choice = 0;
+        int[] array = createArr(100);
+        while(choice != 6){
+            System.out.println("1. Find minimum of the array");
+            System.out.println("2. Find maximum of the array");
+            System.out.println("3. Find the difference of each element from the average");
+            System.out.println("4. Find sum of odd elements");
+            System.out.println("5. Find sum of even elements");
+            System.out.println("6. Exit");
+            System.out.print("Your choice: ");  
+            choice = scan.nextInt();
+            
+            if(choice == 1){
+                int min = findMin(array);
+                System.out.println(min);
+            }
+            else if(choice == 2){
+                int max = findMax(array);
+                System.out.println(max);
+            }
+            else if(choice == 3){
+               double[] difference = findDifference(array); 
+               System.out.println(Arrays.toString(difference));
+            }
+            else if(choice == 4){
+                int sumOdd = sumOfOddElements(array);
+                System.out.println(sumOdd);
+            }
+            else if(choice == 5){
+                int sumEven = sumOfEvenElements(array);
+                System.out.println(sumEven);
+            }
+            else if(choice == 6){
+                break;
+            }
+        }
     }
 
     /**
@@ -119,4 +155,5 @@ public class Assignment02 {
     }
     
 }
+
 
