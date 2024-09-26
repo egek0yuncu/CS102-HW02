@@ -118,10 +118,11 @@ public class Assignment02 {
         }
         average = total / arr.length;
         //finding the difference between the average and the elements of arr and adding this differences to the new array
-        for(int i = 0; i < difference.length; i++){
-            difference[i]= arr[i]- average;
-        }
-        return difference;
+            for(int i = 0; i < difference.length; i++){
+                double differ = Math.round((arr[i]-average)*10.0)/10.0; 
+                difference[i]= differ;
+            }
+            return difference;
 
     }   
     /**
